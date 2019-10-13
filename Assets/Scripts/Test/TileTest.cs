@@ -16,6 +16,11 @@ public class TileTest : ITile
         ID = id;
     }
 
+    protected TileTest(TileTest other)
+    {
+        this.ID = other.ID;
+    }
+
     public bool TileEquivalent(ITile other)
     {
         TileTest tile = other as TileTest;
@@ -23,4 +28,7 @@ public class TileTest : ITile
             return false;
         return tile.ID == ID;
     }
+
+    public ITile Copy() => new TileTest(this);
+
 }

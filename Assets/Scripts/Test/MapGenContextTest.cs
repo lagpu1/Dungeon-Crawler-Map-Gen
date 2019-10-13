@@ -522,13 +522,13 @@ public class MapGenContext : ITiledGenContext, IRoomGridGenContext,
     }
     void IPlaceableGenContext<StairsUp>.PlaceItem(Loc loc, StairsUp item)
     {
-        StairsUp stairs = item.Copy();
+        StairsUp stairs = (StairsUp)item.Copy();
         stairs.Loc = loc;
         GenEntrances.Add(stairs);
     }
     void IPlaceableGenContext<StairsDown>.PlaceItem(Loc loc, StairsDown item)
     {
-        StairsDown stairs = item.Copy();
+        StairsDown stairs = (StairsDown)item.Copy();
         stairs.Loc = loc;
         GenExits.Add(stairs);
     }
